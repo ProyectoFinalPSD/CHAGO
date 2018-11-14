@@ -35,8 +35,8 @@ public class Controlador implements ActionListener {
 		gui1 = new GUIM1();
 		fv = new JFrameFacturaVenta();
 		
-		//fv.setVisible(true);
-		v.setVisible(true);
+		fv.setVisible(true);
+		v.setVisible(false);
 		j.setVisible(false);
 		jp.setVisible(false);
 		

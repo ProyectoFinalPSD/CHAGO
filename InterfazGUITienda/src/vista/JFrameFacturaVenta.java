@@ -9,7 +9,6 @@ public class JFrameFacturaVenta extends JFrame
 {
 	private static final long serialVersionUID = 1L;
 	private FVPanelInfoCliente PFVPanelInfo;
-	private FVPanelCantidadProducto PFVPanelProducto;
 	private FVPanelBtnCompraProducto PFVPanelBotones;
 	private FVPanelTablaProductos PFVPanelListadoPro;
 	
@@ -23,17 +22,17 @@ public class JFrameFacturaVenta extends JFrame
 		setLayout(null);
 		
 		PFVPanelInfo = new FVPanelInfoCliente();
-		PFVPanelInfo.setBounds(10, 10, 420, 70);
+		PFVPanelInfo.setBounds(10, 10, 470, 130);
 		add(PFVPanelInfo);
 		
-		PFVPanelProducto = new FVPanelCantidadProducto();
-		add(PFVPanelProducto);
+		PFVPanelListadoPro = new FVPanelTablaProductos();
+		PFVPanelListadoPro.setBounds(10, 150, 470, 400);
+		add(PFVPanelListadoPro);	
+		
 		
 		PFVPanelBotones =  new FVPanelBtnCompraProducto();
+		PFVPanelBotones.setBounds(10, 550, 470, 150);
 		add(PFVPanelBotones);
-		
-		PFVPanelListadoPro = new FVPanelTablaProductos();
-		add(PFVPanelListadoPro);		
 	}
 
 }
