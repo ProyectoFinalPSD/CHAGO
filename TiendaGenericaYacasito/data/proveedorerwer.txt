@@ -1,0 +1,5 @@
+Nombre: erwer
+NIT: 23443
+Direccion: re
+Telefono: wew
+Ciudad: eww

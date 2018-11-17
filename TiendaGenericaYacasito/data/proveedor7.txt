@@ -1,0 +1,5 @@
+Nombre: 7
+NIT: 7877
+Direccion: 87
+Telefono: Y
+Ciudad: 

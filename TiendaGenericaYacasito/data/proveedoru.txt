@@ -1,0 +1,5 @@
+Nombre: u
+NIT: uu
+Direccion: u
+Telefono: u
+Ciudad: u
