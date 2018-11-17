@@ -15,8 +15,10 @@ public class JFrameRegistroProductos extends JFrame
 
 	public static final String AGREGAR = "Agregar";
 	public static final String ELIMINAR = "Eliminar";
+	public static final String CONTINUAR_COMPRA = "Continuar Compra";
+	public static final String CANCELAR_COMPRA = "Cancelar Compra";
 	private static final long serialVersionUID = 1L;
-	private JButton agregar, eliminar, borrar;
+	private JButton agregar, eliminar, borrar,continuar,cancelar;
 	private JLabel labelTitulo, mensaje;
 	private JTextField textCodigo, textNombre, textNITP, textPrecioVenta,textPrecioCompra;
 	private JLabel codigo, nombre, NITp, precioVenta, precioCompra;
@@ -28,7 +30,7 @@ public class JFrameRegistroProductos extends JFrame
 	public JFrameRegistroProductos()
 	{
 		
-		setSize(480, 500);
+		setSize(480, 480);
 		setTitle("Productos");
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -51,12 +53,12 @@ public class JFrameRegistroProductos extends JFrame
 		
 		precioCompra = new JLabel();
 		precioCompra.setText("Precio Compra");
-		precioCompra.setBounds(20, 160, 80, 25);
+		precioCompra.setBounds(5, 160, 90, 25);
 		add(precioCompra);
 
 		precioVenta = new JLabel();
 		precioVenta.setText("Precio Venta");
-		precioVenta.setBounds(290, 160, 80, 25);
+		precioVenta.setBounds(280, 160, 80, 25);
 		add(precioVenta);	
 
 		textCodigo = new JTextField();
@@ -72,11 +74,11 @@ public class JFrameRegistroProductos extends JFrame
 		add(textNITP);
 		
 		textPrecioCompra = new JTextField();
-		textPrecioCompra.setBounds(80, 160, 190, 25);
+		textPrecioCompra.setBounds(110, 160, 100, 25);
 		add(textPrecioCompra);
 		
 		textPrecioVenta = new JTextField();
-		textPrecioVenta.setBounds(340, 160, 80, 25);
+		textPrecioVenta.setBounds(360, 160, 100, 25);
 		add(textPrecioVenta);		
 		
 		agregar= new JButton();
@@ -86,8 +88,18 @@ public class JFrameRegistroProductos extends JFrame
 		
 		eliminar= new JButton();
 		eliminar.setText("Eliminar");
-		eliminar.setBounds(300, 210, 80, 23);
+		eliminar.setBounds(260, 210, 80, 23);
 		eliminar.setActionCommand(ELIMINAR);
+		
+		continuar= new JButton();
+		continuar.setText("Continuar Compra");
+		continuar.setBounds(260, 400, 150, 23);
+		continuar.setActionCommand(CONTINUAR_COMPRA);
+		
+		cancelar= new JButton();
+		cancelar.setText("Cancelar Compra");
+		cancelar.setBounds(100, 400, 150, 23);
+		cancelar.setActionCommand(CANCELAR_COMPRA);
 		
 		borrar= new JButton();
 		borrar.setText("Borrar Lista");
@@ -96,10 +108,10 @@ public class JFrameRegistroProductos extends JFrame
 		labelTitulo= new JLabel();
 		labelTitulo.setFont(new java.awt.Font("Tahoma", 0, 20));
 		labelTitulo.setText("Registro de Productos");
-		labelTitulo.setBounds(130, 20, 120, 43);
+		labelTitulo.setBounds(130, 20, 250, 43);
 		
 		mensaje= new JLabel();
-		mensaje.setBounds(20, 250, 280, 23);
+		mensaje.setBounds(20, 240, 280, 23);
 		
 		model = new DefaultTableModel();// definimos el objeto tableModel
 		miTabla2.setModel(model);
@@ -110,7 +122,7 @@ public class JFrameRegistroProductos extends JFrame
 		model.addColumn("PrecioVenta");
 
 		JScrollPane miBarra2 = new JScrollPane();
-		miBarra2.setBounds(40, 300, 400, 130);
+		miBarra2.setBounds(20, 260, 400, 130);
 		miBarra2.setViewportView(miTabla2);		
 		
 		add(labelTitulo);
@@ -118,6 +130,8 @@ public class JFrameRegistroProductos extends JFrame
 		add(eliminar);
 		add(borrar);
 		add(mensaje);
+		add(continuar);
+		add(cancelar);
 		add(miBarra2);
 		//add(scrollLista);
 		//contenedor.add(botonCam);
@@ -300,6 +314,22 @@ public class JFrameRegistroProductos extends JFrame
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public JButton getContinuar() {
+		return continuar;
+	}
+
+	public void setContinuar(JButton continuar) {
+		this.continuar = continuar;
+	}
+
+	public JButton getCancelar() {
+		return cancelar;
+	}
+
+	public void setCancelar(JButton cancelar) {
+		this.cancelar = cancelar;
 	}
 
 	

@@ -15,15 +15,13 @@ public class VPPanelBotones extends JPanel
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JButton btnDatos;
+	private JButton btnCom;
 	private JButton btnProd;
 	private JButton btnProv;
-	private JButton btnProv1;
 	
-	public final static String DATOS = "Datos";
+	public final static String COM = "Compras";
 	public final static String PROD = "Productos";
 	public final static String PROV = "Proveedores";
-	public final static String PROV1 = "Proveedoresab";
 	
 	public VPPanelBotones()
 	{
@@ -32,13 +30,13 @@ public class VPPanelBotones extends JPanel
 		border.setTitleColor(Color.BLACK);
 		setBorder(border);
 		
-		JLabel txtBtnDT = new JLabel("Datos Tienda");
+		JLabel txtBtnDT = new JLabel("Compras");
 		txtBtnDT.setFont(new java.awt.Font("Yu Gothic UI Light", java.awt.Font.BOLD,12));
-		btnDatos = new JButton(txtBtnDT.getText());
-		btnDatos.setActionCommand(DATOS);
-		btnDatos.setForeground(Color.BLACK);
-		btnDatos.setBackground(Color.WHITE);
-		btnDatos.setFont(txtBtnDT.getFont());
+		btnCom = new JButton(txtBtnDT.getText());
+		btnCom.setActionCommand(COM);
+		btnCom.setForeground(Color.BLACK);
+		btnCom.setBackground(Color.WHITE);
+		btnCom.setFont(txtBtnDT.getFont());
 		
 		JLabel txtBtnPR = new JLabel("Productos");
 		txtBtnPR.setFont(new java.awt.Font("Yu Gothic UI Light", java.awt.Font.BOLD,12));
@@ -56,15 +54,7 @@ public class VPPanelBotones extends JPanel
 		btnProv.setBackground(Color.WHITE);
 		btnProv.setFont(txtBtnPV.getFont());
 		
-		JLabel txtBtnPV1 = new JLabel("Metodos Prov");
-		txtBtnPV1.setFont(new java.awt.Font("Yu Gothic UI Light", java.awt.Font.BOLD,12));
-		btnProv1 = new JButton("Metodos Prov");
-		btnProv1.setActionCommand(PROV1);
-		btnProv1.setForeground(Color.BLACK);
-		btnProv1.setBackground(Color.WHITE);
-		btnProv1.setFont(txtBtnPV1.getFont());
-		
-		add(btnDatos);
+		add(btnCom);
 		add(btnProd);
 		add(btnProv);
 		/*add(new JLabel(""));
@@ -72,12 +62,12 @@ public class VPPanelBotones extends JPanel
 		add(btnProv1);*/
 	}
 
-	public JButton getBtnDatos() {
-		return btnDatos;
+	public JButton getBtnCom() {
+		return btnCom;
 	}
 
 	public void setBtnDatos(JButton btnDatos) {
-		this.btnDatos = btnDatos;
+		this.btnCom = btnDatos;
 	}
 
 	public JButton getBtnProd() {
@@ -96,14 +86,12 @@ public class VPPanelBotones extends JPanel
 		this.btnProv = btnProv;
 	}
 
-	public JButton getBtnProv1() {
-		return btnProv1;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
-	public void setBtnProv1(JButton btnProv1) {
-		this.btnProv1 = btnProv1;
+	public void setBtnCom(JButton btnCom) {
+		this.btnCom = btnCom;
 	}
-	
-	
 	
 }

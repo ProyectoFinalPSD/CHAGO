@@ -11,10 +11,13 @@ public class MundoVista {
 	private JFrameCompraEfectivo ce;
 	private JFrameRegistroProductos rpd;
 	private JFrameRegistroClientes rcl;
+	private JFrameCheque che;
+    
 
 	
 	public MundoVista()
 	{
+		che =  new JFrameCheque();
 		vp = new JFrameVentanaPrincipal();		
 		rpv = new JFrameRegistroProveedores();
 		dt = new JFrameDatosTienda();
@@ -88,6 +91,14 @@ public class MundoVista {
 
 	public void setRcl(JFrameRegistroClientes rcl) {
 		this.rcl = rcl;
+	}
+
+	public JFrameCheque getChe() {
+		return che;
+	}
+
+	public void setChe(JFrameCheque che) {
+		this.che = che;
 	}
 	
 

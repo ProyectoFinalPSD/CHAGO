@@ -14,13 +14,13 @@ public class Controlador implements ActionListener {
 
 	private MundoVista gui;
 	private Mundo m;
-	
+
 	public Controlador()
 	{
 		m = new Mundo();
 		gui = new MundoVista();
-		
-		
+
+
 		gui.getVp().setVisible(true);
 		gui.getFv().setVisible(false);
 		gui.getCe().setVisible(false);
@@ -28,23 +28,25 @@ public class Controlador implements ActionListener {
 		gui.getRpv().setVisible(false);
 		gui.getDt().setVisible(false);
 		gui.getRpd().setVisible(false);
-		
-		
-		gui.getVp().getPo().getBtnDatos().addActionListener(this);
+
+
+		gui.getVp().getPo().getBtnCom().addActionListener(this);
 		gui.getVp().getPo().getBtnProv().addActionListener(this);
 		gui.getVp().getPg().getBtnGeneral().addActionListener(this);
 		gui.getVp().getPo().getBtnProd().addActionListener(this);
 		
-		
+		gui.getRpd().getContinuar().addActionListener(this);
+
+
 		gui.getDt().getPom1().getBtnAgregar().addActionListener(this);
-				
-		
+
+
 		gui.getRpd().getAgregar().addActionListener(this);
-		
+
 		gui.getRpv().getAgregar().addActionListener(this);
 		gui.getRpv().getEliminar().addActionListener(this);
-		
-		
+
+
 		gui.getFv().getPFVPanelBotones().getContinuar().addActionListener(this);
 	}
 
@@ -54,24 +56,23 @@ public class Controlador implements ActionListener {
 		{
 			m.getModdat().crearArchivos(gui.getDt().getPe().getTxtNT().getText(), gui.getDt().getPe().getTxtTipoC().getText(),gui.getDt().getPe().getTxtNIT().getText(),  gui.getDt().getPe().getTxtCOrigen().getText(), gui.getDt().getPe().getTxtIVa().getText(), gui.getDt().getPe().getTxtTasaInteres().getText(), gui.getDt().getPe().getTxtNBanco().getText(), gui.getDt().getPe().getTxtNumCuenta().getText(), gui.getDt().getPe().getTxtNGerente().getText());
 			gui.getVp().getTituloG().setText(gui.getDt().getPe().getTxtNT().getText());
-			
+
 			JOptionPane.showMessageDialog(null, "Datos Ingresadors Correctamente");
 			gui.getDt().setVisible(false);
 			gui.getVp().getPg().getBtnGeneral().setEnabled(true);
 			gui.getVp().getPo().getBtnProv().setEnabled(true);
 			gui.getVp().getPo().getBtnProd().setEnabled(true);
-			gui.getVp().getPo().getBtnProv1().setEnabled(true);		
-			
+
 		}
-		
+
 	}
 	public void deshabilitarBotones()
 	{
-			gui.getVp().getPg().getBtnGeneral().setEnabled(false);
-			gui.getVp().getPo().getBtnProv().setEnabled(false);
-			gui.getVp().getPo().getBtnProd().setEnabled(false);
-			gui.getVp().getPo().getBtnProv1().setEnabled(false);		
-			
+		gui.getVp().getPg().getBtnGeneral().setEnabled(false);
+		gui.getVp().getPo().getBtnProv().setEnabled(false);
+		gui.getVp().getPo().getBtnProd().setEnabled(false);
+		gui.getVp().getPo().getBtnCom().setEnabled(false);		
+
 	}
 	public void darVenta(ActionEvent e)
 	{
@@ -80,7 +81,7 @@ public class Controlador implements ActionListener {
 		{
 			gui.getFp().setVisible(true);
 		}
-		
+
 	}
 	public void darProveedor(ActionEvent e)
 	{
@@ -91,7 +92,7 @@ public class Controlador implements ActionListener {
 			String nombre = gui.getRpv().getTextNombre().getText();
 			String direccion = gui.getRpv().getTextDireccion().getText();
 			String ciudad = gui.getRpv().getTextCiudad().getText();
-			
+
 			gui.getRpv().agregarProveedor();
 			m.getModprov().agregarProveedor(NIT, nombre, direccion, tel, ciudad);
 			System.out.println(m.getModprov().getProveedores().size());
@@ -100,7 +101,7 @@ public class Controlador implements ActionListener {
 		{
 			gui.getRpv().eliminarProveedor(gui.getRpv().getMiTabla2().getSelectedRow());
 		}
-		
+
 	}
 	public void darProducto(ActionEvent e)
 	{
@@ -124,16 +125,16 @@ public class Controlador implements ActionListener {
 			gui.getRcl().eliminarCliente(gui.getRcl().getMiTabla2().getSelectedRow());
 		}
 	}
-	
+
 	public void actionPerformed(ActionEvent e)
-	
+
 	{
 		if(m.getModdat().getConfiguracion().exists() == false)
 		{
-				deshabilitarBotones();
-				JOptionPane.showMessageDialog(null, "Ingrese datos de la tienda para continuar", null, JOptionPane.WARNING_MESSAGE);
-				gui.getDt().setVisible(true);
-				darDatosTienda(e);	
+			deshabilitarBotones();
+			JOptionPane.showMessageDialog(null, "Ingrese datos de la tienda para continuar", null, JOptionPane.WARNING_MESSAGE);
+			gui.getDt().setVisible(true);
+			darDatosTienda(e);	
 		}		
 		else if(e.getActionCommand().equals(gui.getVp().getPg().BUTG))
 		{
@@ -151,16 +152,39 @@ public class Controlador implements ActionListener {
 		{
 			gui.getRpv().setVisible(true);
 		}
-		 darProveedor(e);
+		darProveedor(e);
 		if(e.getActionCommand().equals(gui.getVp().getPo().PROD))
 		{
+
+		}
+		if(e.getActionCommand().equals(gui.getVp().getPo().COM))
+		{
 			gui.getRpd().setVisible(true);
+
 		}
 		darProducto(e);
+		
+		 if(e.getActionCommand().equals(gui.getRpd().CONTINUAR_COMPRA))
+		{
+			 gui.getChe().setVisible(true);
+			
+		}
+
 	}
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
-	
-	
+
+
 
