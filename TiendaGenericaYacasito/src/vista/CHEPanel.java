@@ -89,8 +89,7 @@ public class CHEPanel extends JPanel
 		add(firma);
 		add(espacioFirma);
 		add(numCuenta);
-		add(confirmar);
-		
+		add(confirmar);	
 	}
 }
 

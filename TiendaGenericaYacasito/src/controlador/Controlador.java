@@ -20,7 +20,7 @@ public class Controlador implements ActionListener {
 		m = new Mundo();
 		gui = new MundoVista();
 
-
+        gui.getIn().setVisible(false);
 		gui.getVp().setVisible(true);
 		gui.getFv().setVisible(false);
 		gui.getCe().setVisible(false);

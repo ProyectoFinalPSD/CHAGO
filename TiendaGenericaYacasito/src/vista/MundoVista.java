@@ -12,11 +12,13 @@ public class MundoVista {
 	private JFrameRegistroProductos rpd;
 	private JFrameRegistroClientes rcl;
 	private JFrameCheque che;
+	private JFrameInventario in;
     
 
 	
 	public MundoVista()
 	{
+		in =  new JFrameInventario();
 		che =  new JFrameCheque();
 		vp = new JFrameVentanaPrincipal();		
 		rpv = new JFrameRegistroProveedores();
@@ -29,67 +31,83 @@ public class MundoVista {
 		
 	}
 
-	public JFrameVentanaPrincipal getVp() {
+	public JFrameVentanaPrincipal getVp() 
+	{
 		return vp;
 	}
 
-	public JFrameRegistroProveedores getRpv() {
+	public JFrameRegistroProveedores getRpv() 
+	{
 		return rpv;
 	}
 
-	public void setRpv(JFrameRegistroProveedores rp) {
+	public void setRpv(JFrameRegistroProveedores rp) 
+	{
 		this.rpv = rp;
 	}
 
-	public JFrameFacturaVenta getFv() {
+	public JFrameFacturaVenta getFv()
+	{
 		return fv;
 	}
 
-	public void setFv(JFrameFacturaVenta fv) {
+	public void setFv(JFrameFacturaVenta fv) 
+	{
 		this.fv = fv;
 	}
 
-	public JFrameDatosTienda getDt() {
+	public JFrameDatosTienda getDt() 
+	{
 		return dt;
 	}
 
-	public void setDt(JFrameDatosTienda dt) {
+	public void setDt(JFrameDatosTienda dt) 
+	{
 		this.dt = dt;
 	}
 
-	public JFrameFormasPago getFp() {
+	public JFrameFormasPago getFp()
+	{
 		return fp;
 	}
 
-	public void setFp(JFrameFormasPago fp) {
+	public void setFp(JFrameFormasPago fp) 
+	{
 		this.fp = fp;
 	}
 
-	public JFrameCompraEfectivo getCe() {
+	public JFrameCompraEfectivo getCe()
+	{
 		return ce;
 	}
 
-	public void setCe(JFrameCompraEfectivo ce) {
+	public void setCe(JFrameCompraEfectivo ce) 
+	{
 		this.ce = ce;
 	}
 
-	public JFrameRegistroProductos getRpd() {
+	public JFrameRegistroProductos getRpd() 
+	{
 		return rpd;
 	}
 
-	public void setRpd(JFrameRegistroProductos rpd) {
+	public void setRpd(JFrameRegistroProductos rpd) 
+	{
 		this.rpd = rpd;
 	}
 
-	public void setVp(JFrameVentanaPrincipal vp) {
+	public void setVp(JFrameVentanaPrincipal vp)
+	{
 		this.vp = vp;
 	}
 
-	public JFrameRegistroClientes getRcl() {
+	public JFrameRegistroClientes getRcl() 
+	{
 		return rcl;
 	}
 
-	public void setRcl(JFrameRegistroClientes rcl) {
+	public void setRcl(JFrameRegistroClientes rcl)
+	{
 		this.rcl = rcl;
 	}
 
@@ -97,8 +115,19 @@ public class MundoVista {
 		return che;
 	}
 
-	public void setChe(JFrameCheque che) {
+	public void setChe(JFrameCheque che)
+	{
 		this.che = che;
+	}
+
+	public JFrameInventario getIn() 
+	{
+		return in;
+	}
+
+	public void setIn(JFrameInventario in) 
+	{
+		this.in = in;
 	}
 	
 
