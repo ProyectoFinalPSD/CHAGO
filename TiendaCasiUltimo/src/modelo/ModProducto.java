@@ -7,18 +7,22 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-public class ModProducto {
-
-	private ArrayList<Producto>Producto;
+public class ModProducto 
+{
+	//Atributos
+	private ArrayList<Producto>Producto;//Un contenedor de productos de tipo Producto
 	private int numProducto;
 	private String ruta = "./data";
 
 	public ModProducto()
 	{
+		//Inicialización
 		Producto = new ArrayList<Producto>();
 		numProducto = 0;		
 	}
-
+	
+	/*Método auxiliar de tipo booleano que permite saber si existe o no un producto por su código si es
+	igual a la que esta por parametro*/
 	public boolean existeProducto(String codigo)
 	{
 		boolean existeProducto =  false;
@@ -32,7 +36,12 @@ public class ModProducto {
 		}		
 		return existeProducto;		
 	}
-
+	
+	
+	/*
+	 * Método de tipo booleano que permite agregar un producto con ayuda del método auxiliar anterior
+	 * agregar un producto por parametros necesarios para registrarlo
+	 */
 	public boolean crearProducto(String codigo, String nombreProducto,String precioCompra,String precioVenta, String nit_proveedor)
 	{
 		boolean crear = false;
@@ -48,7 +57,10 @@ public class ModProducto {
 		leerArchivo(codigo,nombreProducto, precioCompra,precioVenta, nit_proveedor);
 		return crear;
 	}
-
+	
+	/*
+	 * Método que lee una ruta donde esta un file que contiene a los productos registrados
+	 */
 	private void leerArchivo(String codigo, String nombreProducto, String precioCompra, String precioVenta, String nit_proveedor) {
 		File in = new File(ruta+"/producto.txt");
 		File out = new File(ruta+"/producto.txt");
@@ -80,6 +92,10 @@ public class ModProducto {
 	}
 
 	//public tipoDedato leeProducto()
+	
+	/*
+	 * Método que actualiza los datos de un producto por parámetros
+	 */
 
 	public void actualizarCliente(String codigo, String nombreProducto,String  precioCompra,String  precioVenta)
 	{
@@ -96,6 +112,10 @@ public class ModProducto {
 		}
 	}
 
+	/*
+	 * Método que borra a un producto por su código, si su código es igual al que está establecido
+	 * por parámetro, lo borra.
+	 */
 	public String borrarProducto(String  codigo) 
 	{
 		String borrar = "";
@@ -119,5 +139,5 @@ public class ModProducto {
 	public void setProducto(ArrayList<Producto> producto) {
 		Producto = producto;
 	}
-	
+
 }

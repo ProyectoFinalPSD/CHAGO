@@ -12,10 +12,8 @@ public class ModuloFactura {
 		f = new ArrayList<Factura>();
 		consecutivo = 0;
 	}
-	public void crearFactura()
-	{
-		
-	}
+	
+	//Método que permite administrar el consecutivo factura
 	public int darConsecutivo()
 	{
 		return consecutivo = f.size()+1;

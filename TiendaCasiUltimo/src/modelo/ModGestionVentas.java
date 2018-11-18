@@ -12,20 +12,22 @@ import java.util.Properties;
 
 public class ModGestionVentas
 {
-
+	//Atributos
 	private ModProducto modpro;
 	private ModCliente modc;
-	private double IVA, valTotalMaIva;
+	private double IVA, valTotalMaIva;	
 	String valTotal;
 	private String ruta = "/.data";
-
 	private String properties = "configuracion.properties";
 	private Properties prop;
 
 
 	public ModGestionVentas()
 	{
+		
 	}
+	
+	
 	public String buscarCliente(String pCedula)
 	{
 		String buscar = "";
@@ -47,12 +49,16 @@ public class ModGestionVentas
 		}
 		return buscar;
 	}
+	
+	//Método que calcula el IVA
 	public double calcularIVA() throws FileNotFoundException, IOException
 	{
 		prop.load(new FileInputStream(properties));
 		IVA = Double.parseDouble(prop.getProperty("IVA"))*100;
 		return IVA;
 	}
+	
+	//Método que calcula el valor total	
 	public String valTotal()
 	{
 		valTotal = "";
@@ -65,6 +71,8 @@ public class ModGestionVentas
 		System.out.println(valTotal);
 		return valTotal;
 	}
+	
+	//Método que calcula el valor total más IVA
 	public String calcularValorTotalConIVA()
 	{
 		double total = Double.parseDouble(valTotal);
@@ -72,6 +80,7 @@ public class ModGestionVentas
 		return ""+valTotal;
 	}
 
+	//Método que registra los datos de la tienda
 	public void registrarDatosVenta()
 	{
 		File in = new File(ruta+"/datosVenta.txt");
@@ -99,6 +108,8 @@ public class ModGestionVentas
 			System.out.println("Error");
 		}
 	}
+	
+	//Getters y Setters: Permiten para tener acceso de los atributos en otras clases
 	public ModProducto getModpro() {
 		return modpro;
 	}

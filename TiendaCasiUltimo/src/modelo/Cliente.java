@@ -1,25 +1,30 @@
 package modelo;
 
-public class Cliente {
+public class Cliente
+{
+	//Declaración de atributos
 	private String cedula, telefono;
 	private String nombre, direccion, correoElectronico;
 
 	public Cliente(String cd, String nom,String direc, String tel, String correoE)
 	{
+		//Inicialización de atributos
 		cedula =  cd;
 		telefono = tel;
 		nombre = nom;
 		direccion =  direc;
 		correoElectronico = correoE;
 	}
-
 	
-	public String getCedula() {
+	//Getters y Setters: Permiten para tener acceso de los atributos en otras clases	
+	public String getCedula() 
+	{
 		return cedula;
 	}
 
 
-	public void setCedula(String cedula) {
+	public void setCedula(String cedula) 
+	{
 		this.cedula = cedula;
 	}
 

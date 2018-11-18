@@ -14,12 +14,13 @@ import javax.swing.JOptionPane;
 
 public class ModDatosTienda {
 	
-	//private Parametros pa;
+	//Atributos
 	private Properties p;
 	File configuracion;
 	
 	public ModDatosTienda()
-	{
+	{ 
+		//Ruta donde se guardaran los datos de la tienda
 		configuracion = new File ("./data/configuracion.properties");
 	}
 	
@@ -33,7 +34,7 @@ public class ModDatosTienda {
 		this.p = p;
 	}
 
-
+//Método que crea las caracteristicas de la tienda
 	public void crearArchivos(String nombreTienda, String tipoComercio, String NIT, String ciudadOrigen, String valorIva, String tasaInteres, String nombreBanco, String numeroCuenta,String nombreGerente)
 	{
 		try {
@@ -67,6 +68,8 @@ public class ModDatosTienda {
 	{
 		
 	}
+	
+	//Método que carga las caracterisiticas de la tienda.
 	public boolean cargarArchivos(String nombreTienda, String pregunta)
 	{
 		boolean cargar = false;

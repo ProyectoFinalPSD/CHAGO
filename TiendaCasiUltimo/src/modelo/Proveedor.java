@@ -1,7 +1,8 @@
 package modelo;
 
-public class Proveedor {
-
+public class Proveedor 
+{
+	//Declaración de atributos
 	private String NIT;
 	private String nombre;
 	private String direccion;
@@ -10,16 +11,17 @@ public class Proveedor {
 	
 	public Proveedor(String pNit, String pNombre, String pDireccion, String pTelefono, String pCiudad)
 	{
+		//Inicialización de atributos
 		pNit = this.NIT;
 		pNombre = this.nombre;
 		pDireccion = this.direccion;
 		pTelefono = this.telefono;
 		pCiudad = this.ciudad;
 	}
-
 	
-
-	public String getNombre() {
+	//Getters y Setters: Permiten para tener acceso de los atributos en otras clases
+	public String getNombre() 
+	{
 		return nombre;
 	}
 

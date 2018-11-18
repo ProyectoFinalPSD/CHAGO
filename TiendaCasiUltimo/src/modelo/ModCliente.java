@@ -9,17 +9,21 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-public class ModCliente {
-
-	private ArrayList<Cliente>Cl;
+public class ModCliente
+{
+    //Atributos
+	private ArrayList<Cliente>Cl; //Un contenedor de clientes de tipo Cliente
 	private int numCliente;
 
 	public ModCliente()
 	{
+		//Inicialización
 		Cl = new ArrayList<Cliente>();
 		numCliente = 0;				
 	}
-
+	
+/*Método auxiliar de tipo booleano que permite saber si existe o no un cliente por su cedula si es
+	igual a la que esta por parametro*/
 	public boolean existeCliente(String cedula)
 	{
 		boolean existeCl =  false;
@@ -33,7 +37,11 @@ public class ModCliente {
 		}		
 		return existeCl;		
 	}
-
+	
+/*
+ * Método de tipo booleano que permite agregar un cliente con ayuda del método auxiliar anterior
+ * agregar un cliente por parametros necesarios para registrarlo
+ */
 	public boolean agregarCliente(String cedula, String nombre, String direccion, String telefono, String correoElectronico)
 	{
 		boolean agregar = false;
@@ -49,6 +57,10 @@ public class ModCliente {
 		leerArchivo(cedula, nombre, direccion, telefono, correoElectronico);
 		return agregar;
 	}
+	
+	/*
+	 * Método que lee una ruta donde esta un file que contiene a los clientes registrados
+	 */
 	private void leerArchivo(String cedula, String nombre, String direccion, String telefono,String correoElectronico)
 	{
 		try {
@@ -79,9 +91,13 @@ public class ModCliente {
 				}
 			
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Proveedor Agregado");
+			JOptionPane.showMessageDialog(null, "Cliente Agregado");
 		}
 	}
+	
+	/*
+	 * Método que actualiza los datos de un cliente por parámetros
+	 */
 	public void actualizarCliente(String cedula, String nombre, String direccion, String telefono, String correoElectronico)
 	{
 		for (int i = 0; i < Cl.size(); i++) {
@@ -95,6 +111,11 @@ public class ModCliente {
 			}
 		}
 	}
+	
+	/*
+	 * Método que borra a un cliente por su cedula, si su cedula es igual al que está establecida
+	 * por parámetro, lo borra.
+	 */
 	public String borrarCliente(String cedula) 
 	{
 		String borrar = "";
@@ -110,7 +131,9 @@ public class ModCliente {
 		}
 		return borrar;
 	}
-
+	
+	
+	//Getters y Setters: Permiten para tener acceso de los atributos en otras clases
 	public ArrayList<Cliente> getCl() {
 		return Cl;
 	}

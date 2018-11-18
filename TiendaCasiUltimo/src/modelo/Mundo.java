@@ -3,8 +3,9 @@ package modelo;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Mundo {
-	
+public class Mundo 
+{
+	//Declaración de atributos de Mundo
 	private ModCliente modCl;
 	private ModProducto modprod;
 	private ModProveedor modprov;
@@ -14,8 +15,8 @@ public class Mundo {
 	
 	public Mundo()
 	{
-		
-		setModdat(new ModDatosTienda());
+		//Inicialización de atributos
+		moddat =  new ModDatosTienda();
 		modCl = new ModCliente();
 		modprod = new ModProducto();
 		modprov = new ModProveedor();
@@ -23,9 +24,8 @@ public class Mundo {
 		modvent = new ModGestionVentas();
 
 	}
-
-
-
+	
+	//Getters y Setters: Permiten para tener acceso de los atributos en otras clases
 	public ModCliente getModCl() {
 		return modCl;
 	}

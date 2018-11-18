@@ -1,7 +1,8 @@
 package modelo;
 
-public class Producto {
-
+public class Producto 
+{
+	//Declaración de atributos
 	private String codigo;
 	private String nombreProducto;
 	private String NITdeproveedor;
@@ -10,12 +11,15 @@ public class Producto {
 
 	public Producto(String Pcodigo, String PnompreProducto,String PprecioCompra,String PprecioVenta, String Nit)
 	{
+		//Inicialización de atributos
 		codigo = Pcodigo;
 		nombreProducto= PnompreProducto;
 		precioCompra = PprecioCompra;
 		precioVenta =  PprecioVenta;	
 		NITdeproveedor = Nit;
 	}
+	
+	//Getters y Setters: Permiten para tener acceso de los atributos en otras clases
 	public String getNombreProducto()
 	{
 		return nombreProducto;
